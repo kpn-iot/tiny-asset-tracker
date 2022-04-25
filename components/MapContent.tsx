@@ -39,7 +39,7 @@ const MapContent: FC<Props> = ({ coords }) => {
   }, [coords, map, marker]);
 
   const countBadge =
-    count > 0
+    count > 1
       ? `<div style='color: white; display: block; background-color: red; border-radius: 50%; position: absolute; height: 1rem; width: 1rem; right: 0; text-align: center;'>${count}</div>`
       : "";
 

@@ -24,6 +24,16 @@ Forward data from KPN Things to this app, running on localhost:
     - Content Type: application/json
     - HTTP Method: POST
 
+Deploy on Azure:
+
+- install azcli: `brew install azure-cli`
+- log into Azure, where ??? is the tenant ID from Azure Active Directory: `az login --tenant ???`
+- deploy: `az webapp up --sku B1 --location westeurope` (takes about 5 minutes)
+- after deployment the URL is logged
+- KPN Things: set destination HTTPS endpoint with `[generated URL]/api/lora`
+- inspect logs: `az webapp log tail`
+- open `[generated URL]` in the browser to see the web app
+
 ## Development
 
 - `npm run dev`
