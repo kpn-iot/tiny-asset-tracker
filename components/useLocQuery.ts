@@ -9,8 +9,10 @@ const getCoords = async () => {
   return json.data;
 };
 
+const DEFAULT_COORDS: Item[] = [{ loc: [51.9073121, 4.489056], time: "1" }];
+
 export const useLocQuery = () => {
-  const [coords, setCoords] = useState<Item[]>([{ loc: [51.9073121, 4.489056], time: "1" }]);
+  const [coords, setCoords] = useState<Item[]>(DEFAULT_COORDS);
   const [isLoading, setIsLoading] = useState(false);
 
   const update = async (): Promise<void> => {
@@ -19,6 +21,8 @@ export const useLocQuery = () => {
       const result = await getCoords();
       if (result.length > 0) {
         setCoords(result);
+      } else {
+        setCoords(DEFAULT_COORDS);
       }
     } catch (err) {
       console.error(err);
