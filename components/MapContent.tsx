@@ -7,7 +7,7 @@ import {
   Polyline,
   useMap,
 } from "react-leaflet";
-import { Item } from "./types";
+import { Item } from "../lib/types";
 
 const DEFAULT_CENTER: LatLngTuple = [52, 5.1];
 

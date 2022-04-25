@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import { Item, QueryType } from "./types";
+import { Item } from "../lib/types";
 
 const UPDATE_INTERVAL = 1000 * 60 * 60; // 1000 ms / 60 seconds / 60 minutes = 1x per hour
 
-// TODO remove type=24h
-const getCoords = async (type: string) => {
-  const result = await fetch(`/api/coords?type=${type}`);
+const getCoords = async () => {
+  const result = await fetch(`/api/coords`);
   const json: { data: Item[] } = await result.json();
   //   console.log(json);
   return json.data;
@@ -14,12 +13,12 @@ const getCoords = async (type: string) => {
 export const useLocQuery = () => {
   const [coords, setCoords] = useState<Item[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [queryType, setQueryType] = useState<QueryType>("24h");
+  // const [queryType, setQueryType] = useState<QueryType>("24h");
 
-  const update = async (type: string): Promise<void> => {
+  const update = async (): Promise<void> => {
     setIsLoading(true);
     try {
-      const result = await getCoords(type);
+      const result = await getCoords();
       if (result.length > 0) {
         setCoords(result);
       }
@@ -29,20 +28,20 @@ export const useLocQuery = () => {
     setIsLoading(false);
   };
 
-  const toggleQueryType = () => {
-    const newType = queryType === "all" ? "24h" : "all";
-    setQueryType(newType);
-    update(newType);
-  };
+  // const toggleQueryType = () => {
+  //   const newType = queryType === "all" ? "24h" : "all";
+  //   setQueryType(newType);
+  //   update(newType);
+  // };
 
   useEffect(() => {
-    update(queryType);
+    update();
     // Auto-update
     const interval = setInterval(() => {
-      update(queryType);
+      update();
     }, UPDATE_INTERVAL);
     return () => clearInterval(interval);
   }, []);
 
-  return { coords, update, isLoading, toggleQueryType, queryType };
+  return { coords, update, isLoading };
 };

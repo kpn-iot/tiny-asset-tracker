@@ -1,5 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
+import { store } from "../../lib/store";
 
 interface Item {
   loc: [number, number];
@@ -22,11 +23,8 @@ export default async function handler(
   if (req.method !== "GET") {
     res.status(405).json({ status: "ONLY GET IS ALLOWED" });
   } else {
-    const coords: Item[] = [
-      { loc: [51, 4], time: "1" },
-      { loc: [52, 4], time: "1" },
-    ];
-    // console.log("rows", coords);
+    const coords = store;
+    console.log("GET COORDS=", coords);
 
     res.status(200).json({ status: "GET OK", data: coords });
   }

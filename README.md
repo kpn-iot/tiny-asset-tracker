@@ -16,3 +16,12 @@ Runs on [Next.JS](https://nextjs.org)
     Builds the app for production.
 - npm start
     Runs the built app in production mode.
+
+1. install: `npm i`
+2. build: `npm run build`
+3. start server in production mode: `npm start`
+4. seed with dummy data: `./postDummyData.sh`
+
+Development: 
+
+- `npm run dev`

@@ -5,7 +5,7 @@ import MapContent from "./MapContent";
 import { useLocQuery } from "./useLocQuery";
 
 const Map: FC = () => {
-  const { coords, update, isLoading, toggleQueryType, queryType } = useLocQuery();
+  const { coords, update, isLoading } = useLocQuery();
 
   return (
     <div>
@@ -17,18 +17,14 @@ const Map: FC = () => {
         />
       </Head>
       <MapContainer
-        // center={DEFAULT_CENTER}
         zoom={20}
         //   scrollWheelZoom={false}
       >
         <MapContent coords={coords} />
       </MapContainer>
       <div className="custom-controls">
-        <button onClick={() => update(queryType)} disabled={isLoading}>
+        <button onClick={() => update()} disabled={isLoading}>
           update
-        </button>
-        <button onClick={toggleQueryType} disabled={isLoading}>
-          {queryType}
         </button>
       </div>
     </div>
