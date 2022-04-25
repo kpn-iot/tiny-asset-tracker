@@ -1,0 +1,23 @@
+html,
+body {
+  margin: 0;
+}
+
+.leaflet-container {
+  height: 100vh;
+}
+
+.custom-controls {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.custom-controls button {
+  text-transform: uppercase;
+  padding: 0.5rem;
+  margin-left: 0.5rem;
+  font-weight: bold;
+}
