@@ -1,12 +1,6 @@
 import { LatLngTuple, polygon } from "leaflet";
 import { FC, useEffect, useState } from "react";
-import {
-  TileLayer,
-  Marker,
-  Popup,
-  Polyline,
-  useMap,
-} from "react-leaflet";
+import { TileLayer, Marker, Popup, Polyline, useMap } from "react-leaflet";
 import { Item } from "../lib/types";
 
 const DEFAULT_CENTER: LatLngTuple = [52, 5.1];
@@ -23,26 +17,21 @@ interface Props {
 }
 
 const MapContent: FC<Props> = ({ coords }) => {
-  //   const [center, setCenter] = useState<LatLngTuple>(DEFAULT_CENTER);
   const [marker, setMarker] = useState<Item | null>(null);
   const map = useMap();
 
-  const updateBoundsAndMarker = () => {
-    if (coords.length > 0) {
-      // console.log(result[0].loc);
-      // map.setView(DEFAULT_CENTER, 15);
-      // map.flyTo(result[0].loc, 20);
-      // map.setView(result[0].loc, 20);
-      const newPoly = polygon(coords.map(({ loc }) => loc));
-      map.fitBounds(newPoly.getBounds());
-      const last = coords[coords.length - 1];
-      setMarker(last);
-    }
-  };
-
   useEffect(() => {
+    const updateBoundsAndMarker = () => {
+      if (coords.length > 0) {
+        const newPoly = polygon(coords.map(({ loc }) => loc));
+        map.fitBounds(newPoly.getBounds());
+        const last = coords[coords.length - 1];
+        setMarker(last);
+      }
+    };
+
     updateBoundsAndMarker();
-  }, [coords]);
+  }, [coords, map]);
 
   return (
     <>

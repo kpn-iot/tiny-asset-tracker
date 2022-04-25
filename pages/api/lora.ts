@@ -27,12 +27,14 @@ export default async function handler(
         const longitude = data.find((item) => item.n === "longitude")?.v ?? 0;
         const locTime = data.find((item) => item.n === "locTime")?.vs ?? "";
 
+        // console.log(data, "locTime", locTime);
         const logtimestamp = new Date().toLocaleString("nl-nl");
         const logMessage = `${logtimestamp} ${latitude},${longitude} [${locTime} ${new Date(
           parseInt(locTime, 10)
         ).toLocaleString("nl-nl")}]`;
         console.log("POST LORA=", logMessage);
         store.push({ loc: [latitude, longitude], time: locTime });
+        console.log(store);
       } else {
         console.log("temp ignored");
       }
@@ -42,7 +44,7 @@ export default async function handler(
       res.status(500).json({ status: "POST FAILED" });
     }
   } else {
-    console.log("req.query", req.query);
+    console.log("req.query", req.query, req.method);
 
     res.status(200).json({ status: "GET OK" });
   }

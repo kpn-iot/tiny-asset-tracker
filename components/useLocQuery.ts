@@ -6,14 +6,12 @@ const UPDATE_INTERVAL = 1000 * 60 * 60; // 1000 ms / 60 seconds / 60 minutes = 1
 const getCoords = async () => {
   const result = await fetch(`/api/coords`);
   const json: { data: Item[] } = await result.json();
-  //   console.log(json);
   return json.data;
 };
 
 export const useLocQuery = () => {
-  const [coords, setCoords] = useState<Item[]>([]);
+  const [coords, setCoords] = useState<Item[]>([{ loc: [51.9073121, 4.489056], time: "1" }]);
   const [isLoading, setIsLoading] = useState(false);
-  // const [queryType, setQueryType] = useState<QueryType>("24h");
 
   const update = async (): Promise<void> => {
     setIsLoading(true);
@@ -27,12 +25,6 @@ export const useLocQuery = () => {
     }
     setIsLoading(false);
   };
-
-  // const toggleQueryType = () => {
-  //   const newType = queryType === "all" ? "24h" : "all";
-  //   setQueryType(newType);
-  //   update(newType);
-  // };
 
   useEffect(() => {
     update();

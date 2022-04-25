@@ -10,6 +10,10 @@ function put () {
 
 curl http://localhost:3000/api/coords
 
+put "51.9073121" "4.489056"
+
+sleep 10
+
 put "52.3993234" "4.8695023"
 
 sleep 10
