@@ -1,4 +1,6 @@
-# lora-track
+# c3y
+
+> Tiny Asset Tracker
 
 Map to show tracked lora data for KPN IoT workshop
 

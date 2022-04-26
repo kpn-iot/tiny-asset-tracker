@@ -1,6 +1,6 @@
 {
-  "name": "lora-track",
-  "version": "0.1.0",
+  "name": "c3y",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",

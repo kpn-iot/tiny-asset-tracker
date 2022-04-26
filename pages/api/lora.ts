@@ -25,7 +25,8 @@ export default async function handler(
       if (temp === -1) {
         const latitude = data.find((item) => item.n === "latitude")?.v ?? 0;
         const longitude = data.find((item) => item.n === "longitude")?.v ?? 0;
-        const locTime = data.find((item) => item.n === "locTime")?.vs ?? "";
+        // If there was no locTime supplied, fall back to current timestamp
+        const locTime = data.find((item) => item.n === "locTime")?.vs ?? `${Date.now()}`;
 
         // console.log(data, "locTime", locTime);
         const logtimestamp = new Date().toLocaleString("nl-nl");
