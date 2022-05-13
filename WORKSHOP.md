@@ -1,5 +1,7 @@
 # Workshop
 
+This page: https://bit.ly/3wt9PM4
+
 - KPN Things Portal (sign up for Freemium account): https://portal.kpnthings.com/
 - Device Simulator App
     - Android: https://play.google.com/store/apps/details?id=com.kpn.iot.thingsdeviceapp
