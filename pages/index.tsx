@@ -13,7 +13,7 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>c3y</title>
+        <title>tiny-asset-tracker</title>
         <meta name="description" content="Tiny Asset Tracker" />
         <link rel="icon" href="/favicon.ico" />
         <link

@@ -11,7 +11,7 @@ This page: https://bit.ly/3wt9PM4
 - SenML documentation: https://docs.kpnthings.com/dm/concepts/senml
 - ThingsML documentation: https://docs.kpnthings.com/dm/processing/thingsml
 - Webhook (receive messages without setting up a server): https://webhook.site
-- c3y (Free demo asset tracking web application): https://github.com/code-star/c3y
+- tiny-asset-tracker (Free demo asset tracking web application): https://github.com/code-star/c3y
 - Node LTS (16.x): https://nodejs.org/en/download/ or on Mac use `brew install nvm && nvm install 16`
 - NPM 8.x is included with Node
 - Azure CLI: https://docs.microsoft.com/en-us/cli/azure/install-azure-cli or on Mac use `brew install azure-cli`
@@ -44,6 +44,6 @@ payload: 0107050532
 16. Go back to Device Twin
 17. On your phone, select "Location" and click "Send data now"
 18. In Device Twin, click "Refresh"
-19. Follow the steps for the c3y web app
+19. Follow the steps for the tiny-asset-tracker web app
 20. After uploading to Azure Web app, modify the destination for "My First Flow" to the URL returned by Azure CLI.
 21. Try sending data from your phone and refreshing the web app hosted on your Azure account.
