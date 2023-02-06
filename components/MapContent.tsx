@@ -28,7 +28,7 @@ const MapContent: FC<Props> = ({ coords }) => {
         map.fitBounds(newPoly.getBounds());
         const last = coords[coords.length - 1];
         setMarker(last);
-        const sameCoords = coords.filter(({loc}) => {
+        const sameCoords = coords.filter(({ loc }) => {
           return loc[0] === marker?.loc[0] && loc[1] === marker.loc[1];
         });
         setCount(sameCoords.length);
@@ -62,7 +62,15 @@ const MapContent: FC<Props> = ({ coords }) => {
       <Polyline positions={coords.map((coord) => coord.loc)} />
       {marker && (
         <Marker position={marker.loc} icon={customMarker}>
-          <Popup>{new Date(parseInt(marker.time, 10)).toLocaleString("nl-nl")}</Popup>
+          <Popup>
+            <div>
+              {new Date(parseInt(marker.time, 10)).toLocaleString("nl-nl")}
+            </div>
+            {typeof marker.battery !== "undefined" && <div>battery: {marker.battery}%</div>}
+            {typeof marker.temperature !== "undefined" && (
+              <div>temperature: {marker.temperature}°C</div>
+            )}
+          </Popup>
         </Marker>
       )}
     </>

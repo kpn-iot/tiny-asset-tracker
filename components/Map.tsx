@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { MapContainer } from "react-leaflet";
+import { AssetChart } from "./AssetChart";
 import MapContent from "./MapContent";
 import { useLocQuery } from "./useLocQuery";
 
@@ -8,10 +9,7 @@ const Map: FC = () => {
 
   return (
     <div>
-      <MapContainer
-        zoom={20}
-        //   scrollWheelZoom={false}
-      >
+      <MapContainer zoom={20}>
         <MapContent coords={coords} />
       </MapContainer>
       <div className="custom-controls">
@@ -19,6 +17,7 @@ const Map: FC = () => {
           update
         </button>
       </div>
+      <AssetChart items={coords} />
     </div>
   );
 };

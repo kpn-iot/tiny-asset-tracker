@@ -9,7 +9,14 @@ const getCoords = async () => {
   return json.data;
 };
 
-const DEFAULT_COORDS: Item[] = [{ loc: [51.9073121, 4.489056], time: `${Date.now()}` }];
+const DEFAULT_COORDS: Item[] = [
+  {
+    loc: [51.9073121, 4.489056],
+    time: `${Date.now()}`,
+    battery: "0",
+    temperature: 0,
+  },
+];
 
 export const useLocQuery = () => {
   const [coords, setCoords] = useState<Item[]>(DEFAULT_COORDS);

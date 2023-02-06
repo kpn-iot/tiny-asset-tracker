@@ -21,3 +21,13 @@ body {
   margin-left: 0.5rem;
   font-weight: bold;
 }
+
+.chart {
+  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  color: white;
+  left: 0;
+  padding-top: 20px;
+  position: absolute;
+  z-index: 1000;
+}
