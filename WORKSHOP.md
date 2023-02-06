@@ -11,7 +11,7 @@ This page: https://bit.ly/3wt9PM4
 - SenML documentation: https://docs.kpnthings.com/dm/concepts/senml
 - ThingsML documentation: https://docs.kpnthings.com/dm/processing/thingsml
 - Webhook (receive messages without setting up a server): https://webhook.site
-- tiny-asset-tracker (Free demo asset tracking web application): https://github.com/code-star/c3y
+- tiny-asset-tracker (Free demo asset tracking web application): https://github.com/kpn-iot/tiny-asset-tracker
 - Node LTS (16.x): https://nodejs.org/en/download/ or on Mac use `brew install nvm && nvm install 16`
 - NPM 8.x is included with Node
 - Azure CLI: https://docs.microsoft.com/en-us/cli/azure/install-azure-cli or on Mac use `brew install azure-cli`

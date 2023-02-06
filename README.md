@@ -1,6 +1,10 @@
-# c3y
+# Tiny Asset Tracker
 
-> Tiny Asset Tracker
+## Disclaimer
+
+Note that this sample IoT web application is for testing purposes only and not a secure solution for processing data.
+
+## Description
 
 Map to show tracked lora data for KPN IoT workshop
 
