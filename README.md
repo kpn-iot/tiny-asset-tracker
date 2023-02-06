@@ -14,6 +14,8 @@ Can be deployed to Azure Web App.
 
 Runs on [Next.JS](https://nextjs.org)
 
+![screenshot](screenshot.png)
+
 ## Running
 
 1. install: `npm i`
@@ -26,9 +28,9 @@ Forward data from KPN Things to this app, running on localhost:
 - KPN Things: set up a flow
 - KPN Things: set destination HTTPS endpoint with https://webhook.site
 - webhook.site (Tested in Firefox & Chrome, does NOT work in Safari): enable XHR Redirect
-    - target: http://localhost:3000/api/lora
-    - Content Type: application/json
-    - HTTP Method: POST
+  - target: http://localhost:3000/api/lora
+  - Content Type: application/json
+  - HTTP Method: POST
 
 Deploy on Azure:
 
