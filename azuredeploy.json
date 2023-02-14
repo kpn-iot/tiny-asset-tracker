@@ -16,13 +16,6 @@
           "description": "Name for the container group"
         }
       },
-      "location": {
-        "type": "string",
-        "defaultValue": "",
-        "metadata": {
-          "description": "Location for all resources."
-        }
-      },
       "image": {
         "type": "string",
         "defaultValue": "mdworld/tiny-asset-tracker:1.0.0",
