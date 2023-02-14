@@ -16,6 +16,12 @@ Runs on [Next.JS](https://nextjs.org)
 
 ![screenshot](screenshot.png)
 
+## Quick Start on Azure
+
+[![Deploy to Azure](https://learn.microsoft.com/en-us/azure/media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fkpn-iot%2Ftiny-asset-tracker%2Fmain%2Fazuredeploy.json)
+
+Deploys a Docker Container to your Azure ACI.
+
 ## Running
 
 1. install: `npm i`
@@ -45,3 +51,11 @@ Deploy on Azure:
 ## Development
 
 - `npm run dev`
+
+## Docker
+
+A Docker image is available at https://hub.docker.com/r/mdworld/tiny-asset-tracker 
+To build it manually:
+
+- build: `docker build -t mdworld/tiny-asset-tracker:1.0.0 .`
+- run locally: `docker run --rm -p 3000:3000 --name tiny-asset-tracker mdworld/tiny-asset-tracker:1.0.0`
