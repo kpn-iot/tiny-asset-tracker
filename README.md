@@ -16,12 +16,6 @@ Runs on [Next.JS](https://nextjs.org)
 
 ![screenshot](screenshot.png)
 
-## Quick Start on Azure
-
-[![Deploy to Azure](https://learn.microsoft.com/en-us/azure/media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fkpn-iot%2Ftiny-asset-tracker%2Fmain%2Fazuredeploy.json)
-
-Deploys a Docker Container to your Azure ACI.
-
 ## Running
 
 1. install: `npm i`
