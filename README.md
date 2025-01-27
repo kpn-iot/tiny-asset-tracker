@@ -1,5 +1,7 @@
 # Tiny Asset Tracker
 
+This repository is no longer maintained and has been replaced by the Test Endpoint destination (https://docs.kpnthings.com/kpn-things/building-blocks/destinations/test-endpoint)
+
 ## Disclaimer
 
 Note that this sample IoT web application is for testing purposes only and not a secure solution for processing data.
